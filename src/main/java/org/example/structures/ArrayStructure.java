@@ -1,7 +1,5 @@
 package org.example.structures;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class ArrayStructure {
 
@@ -12,21 +10,6 @@ public class ArrayStructure {
     public ArrayStructure(final int[] theArray, final int arraySizeToWorkWith) {
         this.theArray=theArray;
         this.arraySizeToWorkWith=arraySizeToWorkWith;
-    }
-
-
-    public List<Integer> linearSearch(int value) {
-        final List<Integer> indexesFound = new ArrayList<>();
-
-        for(int i = 0 ; i < arraySizeToWorkWith ; i++) {
-
-            if(theArray[i] == value) {
-                indexesFound.add(i);
-            }
-        }
-
-        return indexesFound;
-
     }
 
     public void insertValue(int value) {
@@ -75,5 +58,13 @@ public class ArrayStructure {
             System.out.print("| " + i +" | ");
             System.out.println(theArray[i] + " |");
         }
+    }
+
+    public int[] getTheArray() {
+        return theArray;
+    }
+
+    public int getArraySizeToWorkWith() {
+        return arraySizeToWorkWith;
     }
 }
