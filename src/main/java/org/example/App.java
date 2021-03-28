@@ -1,5 +1,6 @@
 package org.example;
 
+import lombok.extern.slf4j.Slf4j;
 import org.example.search.BinarySearch;
 import org.example.search.LinearSearch;
 import org.example.sorting.InsertionSort;
@@ -8,7 +9,10 @@ import org.example.structures.ArrayStructure;
 import org.example.sorting.BubbleSort;
 import org.example.structures.TheQueue;
 import org.example.structures.TheStack;
+import org.example.structures.linkedlist.LinkList;
 import org.example.utils.Utils;
+
+import java.util.LinkedList;
 
 /*
         Data Structures like Arrays, trees, Lists best used to represent real objects.
@@ -16,6 +20,8 @@ import org.example.utils.Utils;
         Stacks and queues are used to complete a tasks, it is a programmes tool and then discarded.
 
  */
+
+@Slf4j
 public class App 
 {
     private static final int ARRAY_SIZE_TO_WORK_WITH = 10;
@@ -23,7 +29,31 @@ public class App
 
 
     public static void main( String[] args ) {
-        executeQueue();
+        executeLinkedList();
+
+    }
+
+    private static void executeLinkedList() {
+        LinkList linkedList = new LinkList();
+
+        linkedList.insertFirstLink("Data Structures",500);
+        linkedList.insertFirstLink("Design Patterns",700);
+        linkedList.insertFirstLink("Phoenix Project",150);
+        linkedList.insertFirstLink("80/20 principle",740);
+
+        linkedList.display();
+
+        linkedList.removeFirst();
+
+        linkedList.display();
+
+        log.info("{} was found",linkedList.find("Design Patterns").getBookName());
+        log.info("Is Lost in the list? {}",!(linkedList.find("Lost") == null));
+
+        linkedList.remove("Design Patterns");
+
+        linkedList.display();
+
     }
 
     private static void executeQueue() {
