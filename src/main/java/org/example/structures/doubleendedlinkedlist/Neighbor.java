@@ -1,14 +1,16 @@
 package org.example.structures.doubleendedlinkedlist;
 
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
+@Data
 @Slf4j
 public class Neighbor {
 
     private String homeOwnerName;
     private int houseNumber;
 
-    public Neighbor next;
+    private Neighbor next;
     private Neighbor previous;
 
     public Neighbor(String homeOwnerName, int houseNumber) {

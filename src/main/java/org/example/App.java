@@ -9,6 +9,8 @@ import org.example.structures.ArrayStructure;
 import org.example.sorting.BubbleSort;
 import org.example.structures.TheQueue;
 import org.example.structures.TheStack;
+import org.example.structures.doubleendedlinkedlist.DoubleEndedLinkedList;
+import org.example.structures.doubleendedlinkedlist.NeighborIterator;
 import org.example.structures.linkedlist.LinkList;
 import org.example.utils.Utils;
 
@@ -29,8 +31,31 @@ public class App
 
 
     public static void main( String[] args ) {
-        executeLinkedList();
+        executeDoubleEndedLinkedList();
 
+    }
+
+    private static void executeDoubleEndedLinkedList() {
+        DoubleEndedLinkedList doubleEndedLinkedList = new DoubleEndedLinkedList();
+
+        doubleEndedLinkedList.insertInOrder("Rami Del Toro",7);
+        doubleEndedLinkedList.insertInOrder("Paulina Del Toro",6);
+//        doubleEndedLinkedList.insertInOrder("Iris Tuff",8);
+//        doubleEndedLinkedList.insertInOrder("John DT",12);
+//        doubleEndedLinkedList.insertInOrder("Tabetha Tuff",9);
+//        doubleEndedLinkedList.insertInOrder("Amanda Tuff",10);
+
+
+        doubleEndedLinkedList.display();
+
+
+        NeighborIterator neighborIterator = new NeighborIterator(doubleEndedLinkedList);
+
+        neighborIterator.getCurrentNeighbor().display();
+        log.info("has next ? = {}",neighborIterator.hasNext());
+        neighborIterator.remove();
+
+        doubleEndedLinkedList.display();
     }
 
     private static void executeLinkedList() {
