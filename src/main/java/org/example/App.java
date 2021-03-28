@@ -1,9 +1,12 @@
 package org.example;
 
 import lombok.extern.slf4j.Slf4j;
+import org.example.recursion.Factorial;
+import org.example.recursion.TriangularNumber;
 import org.example.search.BinarySearch;
 import org.example.search.LinearSearch;
 import org.example.sorting.InsertionSort;
+import org.example.sorting.MergeSort;
 import org.example.sorting.SelectionSort;
 import org.example.structures.ArrayStructure;
 import org.example.sorting.BubbleSort;
@@ -31,7 +34,29 @@ public class App
 
 
     public static void main( String[] args ) {
-        executeDoubleEndedLinkedList();
+        executeMergeSort();
+    }
+
+    private static void executeMergeSort() {
+        ArrayGenerator arrayGenerator = new ArrayGenerator(10,10,10);
+        final int[] theArray = arrayGenerator.generateRandomArray();
+        MergeSort mergeSort = new MergeSort();
+
+        log.info("Original Array");
+        Utils.printHorzArray(-1,-1,theArray.length,theArray);
+        mergeSort.exeucte(theArray);
+        log.info("Array After Sort");
+        Utils.printHorzArray(-1,-1,theArray.length,theArray);
+
+    }
+    private static void executeNonRecursion() {
+        TriangularNumber triangularNumber = new TriangularNumber();
+        Factorial factorial = new Factorial();
+
+        log.info("triangularNumber non Recursive 6 = {}",triangularNumber.getTriangularNumberNonRecursive(6));
+        log.info("triangularNumber Recursive 6 = {}",triangularNumber.getTriangularNumberRecursive(6));
+
+        log.info("Factorial 6 = {}",factorial.getFactorial(6));
 
     }
 
