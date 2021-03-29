@@ -11,9 +11,11 @@ import org.example.structures.TheQueue;
 import org.example.structures.TheStack;
 import org.example.structures.doubleendedlinkedlist.DoubleEndedLinkedList;
 import org.example.structures.doubleendedlinkedlist.NeighborIterator;
+import org.example.structures.hashtable.HashFunction;
 import org.example.structures.linkedlist.LinkList;
 import org.example.utils.Utils;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 
 /*
@@ -31,7 +33,29 @@ public class App
 
 
     public static void main( String[] args ) {
-        executeQuickSort();
+        executeHashFunction();
+    }
+
+    private static void executeHashFunction() {
+        HashFunction hashFunction = new HashFunction(30);
+
+        String[] elementsToAdd = {"1","5","17","21","26"};
+        String[] elementsToAdd2 = { "100", "510", "170", "214", "268", "398",
+                "235", "802", "900", "723", "699", "1", "16", "999", "890",
+                "725", "998", "978", "988", "990", "989", "984", "320", "321",
+                "400", "415", "450", "50", "660", "624" };
+
+
+
+
+        hashFunction.hashFunction2(elementsToAdd2);
+        hashFunction.findKey("660");
+
+        Utils.displayTheStack(hashFunction.getTheArray());
+
+
+
+
     }
 
 

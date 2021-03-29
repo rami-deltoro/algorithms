@@ -126,100 +126,50 @@ public class Utils {
 
     }
 
-    public static void displayTheStack(String[] stackArray){
-        int stackSize = stackArray.length;
+    public static void displayTheStack(String[] theArray){
+        int stackSize = theArray.length;
 
-        for(int n = 0; n < 61; n++)System.out.print("-");
+        int increment = 0;
 
-        System.out.println();
+        for (int m = 0; m < 3; m++) {
 
-        for(int n = 0; n < stackSize; n++){
+            increment += 10;
 
-            System.out.format("| %2s "+ " ", n);
+            for (int n = 0; n < 71; n++)
+                System.out.print("-");
 
-        }
+            System.out.println();
 
-        System.out.println("|");
+            for (int n = increment - 10; n < increment; n++) {
 
-        for(int n = 0; n < 61; n++)System.out.print("-");
+                System.out.format("| %3s " + " ", n);
 
-        System.out.println();
+            }
 
-        for(int n = 0; n < stackSize; n++){
+            System.out.println("|");
 
+            for (int n = 0; n < 71; n++)
+                System.out.print("-");
 
+            System.out.println();
 
-            if(stackArray[n].equals("-1")) System.out.print("|     ");
+            for (int n = increment - 10; n < increment; n++) {
 
-            else System.out.print(String.format("| %2s "+ " ", stackArray[n]));
+                if (theArray[n].equals("-1"))
+                    System.out.print("|      ");
 
-        }
+                else
+                    System.out
+                            .print(String.format("| %3s " + " ", theArray[n]));
 
-        System.out.println("|");
+            }
 
-        for(int n = 0; n < 61; n++)System.out.print("-");
+            System.out.println("|");
 
-        System.out.println();
+            for (int n = 0; n < 71; n++)
+                System.out.print("-");
 
-    }
-
-    public static void printHorzArrayShellSort(int i, int j, int h,int[] theArray) {
-        int arraySize = theArray.length;
-        if (i == j)
-            i = i - h;
-
-        for (int n = 0; n < 51; n++)
-            System.out.print("-");
-
-        System.out.println();
-
-        for (int n = 0; n < arraySize; n++) {
-
-            System.out.print("| " + n + "  ");
-
-        }
-
-        System.out.println("|");
-
-        for (int n = 0; n < 51; n++)
-            System.out.print("-");
-
-        System.out.println();
-
-        for (int n = 0; n < arraySize; n++) {
-
-            System.out.print("| " + theArray[n] + " ");
-
-        }
-
-        System.out.println("|");
-
-        for (int n = 0; n < 51; n++)
-            System.out.print("-");
-
-        System.out.println();
-
-        if (i != -1) {
-
-            // Number of spaces to put before the F
-
-            int spacesBeforeFront = 5 * i + 1;
-
-            for (int k = 0; k < spacesBeforeFront; k++)
-                System.out.print(" ");
-
-            System.out.print("I");
-
-            // Number of spaces to put before the R
-
-            int spacesBeforeRear = (5 * j + 1 - 1) - spacesBeforeFront;
-
-            for (int l = 0; l < spacesBeforeRear; l++)
-                System.out.print(" ");
-
-            System.out.print("O");
-
-            System.out.println("\n");
+            System.out.println();
 
         }
 
