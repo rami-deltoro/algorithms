@@ -5,11 +5,8 @@ import org.example.recursion.Factorial;
 import org.example.recursion.TriangularNumber;
 import org.example.search.BinarySearch;
 import org.example.search.LinearSearch;
-import org.example.sorting.InsertionSort;
-import org.example.sorting.MergeSort;
-import org.example.sorting.SelectionSort;
+import org.example.sorting.*;
 import org.example.structures.ArrayStructure;
-import org.example.sorting.BubbleSort;
 import org.example.structures.TheQueue;
 import org.example.structures.TheStack;
 import org.example.structures.doubleendedlinkedlist.DoubleEndedLinkedList;
@@ -34,7 +31,23 @@ public class App
 
 
     public static void main( String[] args ) {
-        executeMergeSort();
+        executeQuickSort();
+    }
+
+
+    private static void executeQuickSort() {
+        ArrayGenerator arrayGenerator = new ArrayGenerator(10,10,10);
+        final int[] theArray = arrayGenerator.generateRandomArray();
+
+
+        log.info("Original Array");
+        Utils.printHorzArray(-1,-1,theArray.length,theArray);
+
+        QuickSort quickSort = new QuickSort(theArray);
+        quickSort.execute();
+
+        log.info("After Sort Array");
+        Utils.printHorzArray(-1,-1,theArray.length,theArray);
     }
 
     private static void executeMergeSort() {

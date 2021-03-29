@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 /*
     O(nlogn) time
     O(n) space
+    https://stackoverflow.com/questions/7801861/why-is-merge-sort-worst-case-run-time-o-n-log-n
  */
 @Slf4j
 public class MergeSort {
