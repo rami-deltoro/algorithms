@@ -9,6 +9,7 @@ import org.example.sorting.*;
 import org.example.structures.ArrayStructure;
 import org.example.structures.TheQueue;
 import org.example.structures.TheStack;
+import org.example.structures.binarytrees.BinaryTree;
 import org.example.structures.doubleendedlinkedlist.DoubleEndedLinkedList;
 import org.example.structures.doubleendedlinkedlist.NeighborIterator;
 import org.example.structures.hashtable.HashFunction;
@@ -66,9 +67,25 @@ public class App
 
 
     public static void main( String[] args ) {
-        executeHashFunction3();
+        executeBinaryTree();
     }
 
+
+    public static void executeBinaryTree() {
+        BinaryTree binaryTree = new BinaryTree();
+
+        binaryTree.addNode(50, "Boss");
+        binaryTree.addNode(25, "Vice President");
+        binaryTree.addNode(15, "Office Manager");
+        binaryTree.addNode(30, "Secretary");
+        binaryTree.addNode(75, "Sales Manager");
+        binaryTree.addNode(85, "SalesMan 1");
+
+        binaryTree.postOrderTraverseTree(binaryTree.getRoot());
+
+        log.info("Search for 30 ::{}",binaryTree.findNode(30));
+
+    }
     public static void executeHashFunction3() {
         Scanner input = new Scanner(System.in);
 
