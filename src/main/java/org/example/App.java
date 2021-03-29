@@ -12,11 +12,13 @@ import org.example.structures.TheStack;
 import org.example.structures.doubleendedlinkedlist.DoubleEndedLinkedList;
 import org.example.structures.doubleendedlinkedlist.NeighborIterator;
 import org.example.structures.hashtable.HashFunction;
+import org.example.structures.hashtable.HashFunction3;
 import org.example.structures.linkedlist.LinkList;
 import org.example.utils.Utils;
 
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.Scanner;
 
 /*
         Data Structures like Arrays, trees, Lists best used to represent real objects.
@@ -28,12 +30,61 @@ import java.util.LinkedList;
 @Slf4j
 public class App 
 {
+    public static String[][] elementsToAdd = {
+            { "ace", "Very good" },
+            { "act", "Take action" },
+            { "add", "Join (something) to something else" },
+            { "age", "Grow old" },
+            { "ago", "Before the present" },
+            { "aid", "Help, assist, or support" },
+            { "aim", "Point or direct" },
+            { "air", "Invisible gaseous substance" },
+            { "all", "Used to refer to the whole quantity" },
+            { "amp",
+                    "Unit of measure for the strength of an electrical current" },
+            { "and", "Used to connect words" }, { "ant", "A small insect" },
+            { "any", "Used to refer to one or some of a thing" },
+            { "ape", "A large primate" },
+            { "apt", "Appropriate or suitable in the circumstances" },
+            { "arc", "A part of the circumference of a curve" },
+            { "are", "Unit of measure, equal to 100 square meters" },
+            { "ark", "The ship built by Noah" },
+            { "arm", "Two upper limbs of the human body" },
+            { "art", "Expression or application of human creative skill" },
+            { "ash", "Powdery residue left after the burning" },
+            { "ask", "Say something in order to obtain information" },
+            { "asp", "Small southern European viper" },
+            { "ass", "Hoofed mammal" },
+            { "ate", "To put (food) into the mouth and swallow it" },
+            { "atm", "Unit of pressure" },
+            { "awe", "A feeling of reverential respect" },
+            { "axe", "Edge tool with a heavy bladed head" },
+            { "aye", "An affirmative answer" } };
+
     private static final int ARRAY_SIZE_TO_WORK_WITH = 10;
     private static final ArrayGenerator arrayGenerator = new ArrayGenerator(ARRAY_SIZE_TO_WORK_WITH,50,10);
 
 
     public static void main( String[] args ) {
-        executeHashFunction();
+        executeHashFunction3();
+    }
+
+    public static void executeHashFunction3() {
+        Scanner input = new Scanner(System.in);
+
+        HashFunction3 wordHashTable = new HashFunction3(11);
+        wordHashTable.addArray(elementsToAdd);
+
+
+        String wordLookUp = "a";
+
+        while (!wordLookUp.equalsIgnoreCase("x")) {
+
+            System.out.println(": ");
+
+            wordLookUp = input.nextLine();
+            System.out.println(wordHashTable.find(wordLookUp));
+        }
     }
 
     private static void executeHashFunction() {
