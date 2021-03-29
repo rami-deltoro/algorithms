@@ -4,8 +4,8 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class HashFunction3 {
-    private WordList[] theArray;
-    private int arraySize;
+    private final WordList[] theArray;
+    private final int arraySize;
 
 
     public HashFunction3(int size) {
@@ -37,11 +37,11 @@ public class HashFunction3 {
     }
 
     public void addArray(String[][] elementsToAdd) {
-        for(int i=0;i<elementsToAdd.length;i++) {
-            String word = elementsToAdd[i][0];
-            String definition = elementsToAdd[i][1];
+        for (String[] strings : elementsToAdd) {
+            String word = strings[0];
+            String definition = strings[1];
 
-            Word newWord = new Word(word,definition);
+            Word newWord = new Word(word, definition);
             insert(newWord);
         }
     }
