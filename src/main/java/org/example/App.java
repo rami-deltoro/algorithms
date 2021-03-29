@@ -45,13 +45,32 @@ public class App
                 "725", "998", "978", "988", "990", "989", "984", "320", "321",
                 "400", "415", "450", "50", "660", "624" };
 
+        String[] elementsToAdd3 = { "30", "60", "90", "120", "150", "180",
+                "210", "240", "270", "300", "330", "360", "390", "420", "450",
+                "480", "510", "540", "570", "600", "989", "984", "320", "321",
+                "400", "415", "450", "50", "660", "624" };
 
 
 
-        hashFunction.hashFunction2(elementsToAdd2);
+
+        hashFunction.hashFunction2(elementsToAdd3);
+        hashFunction.increaseArraySize(60);
         hashFunction.findKey("660");
 
+        log.info("Pre CLuster / double hash function array");
         Utils.displayTheStack(hashFunction.getTheArray());
+
+        Arrays.fill(hashFunction.getTheArray(),"-1");
+
+        log.info("After CLuster / double hash function array");
+
+        hashFunction.doubleHashFunction(elementsToAdd3);
+
+        Utils.displayTheStack(hashFunction.getTheArray());
+
+        hashFunction.findDoubleHashedKey("989");
+
+
 
 
 

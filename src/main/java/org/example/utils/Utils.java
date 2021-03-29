@@ -126,12 +126,14 @@ public class Utils {
 
     }
 
-    public static void displayTheStack(String[] theArray){
-        int stackSize = theArray.length;
+    public static void displayTheStack(String[] theArray) {
+        int arraySize = theArray.length;
 
         int increment = 0;
 
-        for (int m = 0; m < 3; m++) {
+        int numberOfRows = (arraySize / 10) + 1;
+
+        for (int m = 0; m < numberOfRows; m++) {
 
             increment += 10;
 
@@ -155,7 +157,10 @@ public class Utils {
 
             for (int n = increment - 10; n < increment; n++) {
 
-                if (theArray[n].equals("-1"))
+                if (n >= arraySize)
+                    System.out.print("|      ");
+
+                else if (theArray[n].equals("-1"))
                     System.out.print("|      ");
 
                 else
@@ -174,6 +179,5 @@ public class Utils {
         }
 
     }
-
 
 }
